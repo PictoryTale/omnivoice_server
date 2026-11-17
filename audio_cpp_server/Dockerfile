@@ -46,8 +46,6 @@ COPY --from=builder /src/build/bin/ /src/
 WORKDIR /app
 
 EXPOSE ${PORT}
-COPY ./audio_cpp_server/download_models/download.bash /download_models/download.bash
-COPY ./audio_cpp_server/download_models/omnivoice.bash /app/download_models/omnivoice.bash
-RUN bash /app/omnivoice.bash
+
 
 CMD ["tail", "-f", "/dev/null"]
